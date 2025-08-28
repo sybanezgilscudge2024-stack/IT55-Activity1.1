@@ -1,146 +1,145 @@
 <!DOCTYPE html>
-
-
-<html>
+<html lang="en">
 <head>
-<title>My First Webpage</title>
-<meta charset="UTF-8">
-<meta name="description" content="This is my first HTML page.">
-<meta name="keyword" content="HTML, beginner, web development">
-<meta name="author" content="Gil Scudge Ybañez">
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #D2B9D3;
-    }
-    h1 {
-        color: #2c3e50;
-    }
-    p {
-        line-height: 1.5;
-    }
-    .highlight {
-        background-color: #9E7BFF;
-    }
-
-</style>
-<script>
-    function greet(){
-
-        alert("Hello! Welcome to my first webpage!!!!");
-
-    }
-</script>
+  <meta charset="UTF-8" />
+  <meta name="description" content="This is my first HTML page." />
+  <meta name="keywords" content="HTML, beginner, web development" />
+  <meta name="author" content="Gil Scudge Ybañez" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My First Webpage</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body onload="greet()">
 
 
+  <header class="head_container">
     <h1>Welcome to My First Webpage</h1>
-    <p>This is a <b>BOLD</b> statement, and here is some <i>italic</i> text.</p>
-    <p class="highlight"> This paragraph is highlighted using CSS.</p>
+  </header>
 
-    <h2>My Favorite Fruits</h2>
-    <ul>
+  <main id="body_div" class="opacity_zero body_container">
+
+    <section id="container_1" class="opacity_zero">
+      <h2>My Favorite Fruits</h2>
+      <ul>
         <li>Watermelon</li>
         <li>Strawberry</li>
         <li>Mangos</li>
-    </ul>
-    <h2>Steps to Make Tea</h2>
-    <ol>
+      </ul>
+    </section>
+
+    <section id="container_2" class="opacity_zero">
+      <h2>Steps to Make Tea</h2>
+      <ol>
         <li>Boil some Water</li>
         <li>Add some Tea leaves</li>
         <li>Pour it into a cup</li>
+      </ol>
+      <p>Visit 
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1" target="_blank" rel="noopener noreferrer">
+          Example Website
+        </a> for more info.
+      </p>
+    </section>
 
-    </ol>
-<!-- This is a comment: The above lists shows unordered and ordered lists sheeeeeeeeeesh-->
- <p>Visit <a href="www.example.com" target="_blank">Example Website</a> for more info.</p>
+    <section id="container_3" class="opacity_zero">
+      <h2>My Favorite Song!!</h2>
+      <p><i>Bloom in the mud - Nightcord at 25:00 cover</i></p>
+      <audio controls>
+        <source src="泥中に咲く  25時ナイトコードで  初音ミク.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <section id="container_4" class="opacity_zero">
+      <h2>My Favorite Movie Scene!!</h2>
+      <video width="640" height="360" controls>
+        <source src="videoplayback.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="container_5" class="opacity_zero">
+      <h2>My Favorite Picture!!</h2>
+      <img src="Mafuyu.jpg" alt="A beautiful view" width="640" />
+    </section>
+
+    <div class="highlighted-block">
+      <p>This is a block container using <span class="highlight">div</span> and 
+        <span class="bold">span</span> elements.</p>
+    </div>
+
+    <section class = "waw">
+      <h2>Class Scheduler</h2>
+      <table border="1" cellpadding="5">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Subject</th>
+            <th>Time</th>
+            <th>Room</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday/Wednesday</td>
+            <td>Web Systems and Technology I</td>
+            <td>10:00 - 11:00 AM</td>
+            <td>CISC Room 2</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Web Systems and Technology I (LAB)</td>
+            <td>1:00 - 4:00 PM</td>
+            <td>CISC Lab 26</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message"></textarea><br /><br />
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+    function fadeInElement(el, className, delay) {
+      setTimeout(() => {
+        el.classList.remove("opacity_zero");
+        el.classList.add(className);
+      }, delay);
+    }
+
+    function greet() {
+      const body = document.getElementById("body_div");
+      const cont1 = document.getElementById("container_1");
+      const cont2 = document.getElementById("container_2");
+      const cont3 = document.getElementById("container_3");
+      const cont4 = document.getElementById("container_4");
+      const cont5 = document.getElementById("container_5");
+
+      fadeInElement(body, "body_container", 500);
+      fadeInElement(cont1, "container1", 1000);
+      fadeInElement(cont2, "container2", 1500);
+      fadeInElement(cont3, "container3", 2000);
+      fadeInElement(cont4, "container4", 2500);
+      fadeInElement(cont5, "container5", 3000);
 
 
-
-<h2>My Favorite Song!!</h2>
-<p>Bloom in the mud - <i>Nightcord at 25:00 cover</i></p>
-<audio controls>
-    <source src="泥中に咲く  25時ナイトコードで  初音ミク.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<h2>My Favorite Movie Scene!!</h2>
-<video width="320" height="240" controls>
-    <source src="videoplayback.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
-<h2>My Favorite Picture!!</h2>
-<img src="Mafuyu.jpg" alt="A beautiful view" width="300">
-
-
-
-
-<div style="color: #7D0552; border: 1px solid #000; padding:10px; margin-top:10px;">
-
-<p>This is a block container using <span style ="color:red;">div</span> and 
-    <span style ="font-weight: bold;">span</span> elements.</p>
-
-</div>
-
-<h2>Class Scheduler</h2>
-<table border="1" cellpadding="5">
-    <tr>
-        <th style="color:purple">Day</th>
-        <th style="color:purple">Subject</th>
-        <th style="color:purple">Time</th>
-        <th style="color:purple">Room</th>
-    </tr>
-    <tr>
-        <th style="color:purple">Monday/Wednesday</th>
-        <th style="color:purple">Web Systems and Technology I</th>
-        <th style="color:purple">10:00 - 11:00 AM</th>
-        <th style="color:purple">CISC Room 2</th>
-    </tr>
-    <tr>
-        <th style="color:purple">Tuesday</th>
-        <th style="color:purple">Web Systems and Technology I(LAB)</th>
-        <th style="color:purple">1:00 - 4:00 PM</th>
-        <th style="color:purple">CISC Lab 26</th>
-    </tr>
-
-</table>
-
-<h2>Contact Me</h2>
-<form>
-
-<label for="name">Name:</label>
-<input type="text" id="name" name="name"><br><br>
-
-<label for="email">Email:</label>
-<input type="email" id="email" name="email"><br><br>
-
-<label for="message">Message:</label><br>
-<textarea id="message" name="message"></textarea><br><br>
-
-<input type="submit" value="send">
-</form>
-
+    }
+  </script>
 
 </body>
-
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
